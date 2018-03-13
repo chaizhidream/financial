@@ -1,30 +1,30 @@
 package com.neuq.bean;     
 /**    
-* ·¢ËÍÓÊ¼şĞèÒªÊ¹ÓÃµÄ»ù±¾ĞÅÏ¢  
- ¸ù¾İĞèÒªĞŞ¸Ä
+* å‘é€é‚®ä»¶éœ€è¦ä½¿ç”¨çš„åŸºæœ¬ä¿¡æ¯  
+ æ ¹æ®éœ€è¦ä¿®æ”¹
 */      
 import java.util.Properties;      
 public class MailSenderInfo {      
-    // ·¢ËÍÓÊ¼şµÄ·şÎñÆ÷µÄIPºÍ¶Ë¿Ú      
+    // å‘é€é‚®ä»¶çš„æœåŠ¡å™¨çš„IPå’Œç«¯å£      
     private String mailServerHost;      
     private String mailServerPort = "25";      
-    // ÓÊ¼ş·¢ËÍÕßµÄµØÖ·      
+    // é‚®ä»¶å‘é€è€…çš„åœ°å€      
     private String fromAddress;      
-    // ÓÊ¼ş½ÓÊÕÕßµÄµØÖ·      
+    // é‚®ä»¶æ¥æ”¶è€…çš„åœ°å€      
     private String toAddress;      
-    // µÇÂ½ÓÊ¼ş·¢ËÍ·şÎñÆ÷µÄÓÃ»§ÃûºÍÃÜÂë      
+    // ç™»é™†é‚®ä»¶å‘é€æœåŠ¡å™¨çš„ç”¨æˆ·åå’Œå¯†ç       
     private String userName;      
     private String password;      
-    // ÊÇ·ñĞèÒªÉí·İÑéÖ¤      
+    // æ˜¯å¦éœ€è¦èº«ä»½éªŒè¯      
     private boolean validate = false;      
-    // ÓÊ¼şÖ÷Ìâ      
+    // é‚®ä»¶ä¸»é¢˜      
     private String subject;      
-    // ÓÊ¼şµÄÎÄ±¾ÄÚÈİ      
+    // é‚®ä»¶çš„æ–‡æœ¬å†…å®¹      
     private String content;      
-    // ÓÊ¼ş¸½¼şµÄÎÄ¼şÃû      
+    // é‚®ä»¶é™„ä»¶çš„æ–‡ä»¶å      
     private String[] attachFileNames;        
     /**    
-      * »ñµÃÓÊ¼ş»á»°ÊôĞÔ    
+      * è·å¾—é‚®ä»¶ä¼šè¯å±æ€§    
       */      
     public Properties getProperties(){      
       Properties p = new Properties();      
@@ -36,17 +36,17 @@ public class MailSenderInfo {
     
     /**
      * @param toAddress 
-     * @param mailServerHost ÓÊÏä·şÎñÆ÷
-     * @param mailServerPort ¶Ë¿ÚºÅ
-     * @param fromAddress ·¢¼şÓÊÏä
-     * @param toAddress ÊÕ¼şÓÊÏä
+     * @param mailServerHost é‚®ç®±æœåŠ¡å™¨
+     * @param mailServerPort ç«¯å£å·
+     * @param fromAddress å‘ä»¶é‚®ç®±
+     * @param toAddress æ”¶ä»¶é‚®ç®±
      * @param content 
-     * @param userName ÓÃ»§Ãû
-     * @param password ÓÊÏäÊÚSMTPÈ¨Âë
-     * @param validate ÊÇ·ñ¿ªÆôÉí·İÑéÖ¤
-     * @param subject ÓÊ¼ş±êÌâ
-     * @param content ÓÊ¼şÄÚÈİ
-     * @param attachFileNames  ÓÊ¼ş¸½¼şÃû
+     * @param userName ç”¨æˆ·å
+     * @param password é‚®ç®±æˆSMTPæƒç 
+     * @param validate æ˜¯å¦å¼€å¯èº«ä»½éªŒè¯
+     * @param subject é‚®ä»¶æ ‡é¢˜
+     * @param content é‚®ä»¶å†…å®¹
+     * @param attachFileNames  é‚®ä»¶é™„ä»¶å
      */
     public MailSenderInfo(){
     	this.mailServerHost = "smtp.163.com";
@@ -54,9 +54,10 @@ public class MailSenderInfo {
 		this.fromAddress ="chaizhi_dream@163.com";
 	//	this.toAddress = toAddress;
 		this.userName = "chaizhi_dream@163.com";
-		this.password = "test163";
+		this.password = "*********";
+	    //è¿™é‡Œå¡«è‡ªå·±çš„æˆæƒç 
 		this.validate = true;
-		this.subject = "ÖØÖÃÃÜÂëÉêÇë";
+		this.subject = "é‡ç½®å¯†ç ç”³è¯·";
 	//	this.content = content;
 		//this.attachFileNames = attachFileNames;
     
@@ -66,8 +67,8 @@ public class MailSenderInfo {
     
     
     /**
- 	 * @param toAddress ÊÕ¼şÓÊ
- 	 * @param content ÓÊ¼şÄÚÈİ
+ 	 * @param toAddress æ”¶ä»¶é‚®
+ 	 * @param content é‚®ä»¶å†…å®¹
  	 */
 	public MailSenderInfo(String toAddress, String content) {
 		super();
@@ -76,9 +77,10 @@ public class MailSenderInfo {
 		this.fromAddress ="chaizhi_dream@163.com";
 		this.toAddress = toAddress;
 		this.userName = "chaizhi_dream@163.com";
-		this.password = "test163";
+		this.password = "*********";
+	    //è¿™é‡Œå¡«è‡ªå·±çš„æˆæƒç 
 		this.validate = true;
-		this.subject = "ÖØÖÃÃÜÂëÉêÇë";
+		this.subject = "é‡ç½®å¯†ç ç”³è¯·";
 		this.content = content;
 		//this.attachFileNames = attachFileNames;
 	}
